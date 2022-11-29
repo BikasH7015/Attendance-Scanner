@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Transparent Login Form UI</title>
+    <link rel="stylesheet" href="style1.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+    <div class="bg-img">
+      <div class="content">
+        <header>Attendance Form</header>
+        <form action="" name="Studentdata" id="Studentdata">
+          <div class="field">
+            <span class="fa fa-user"></span>
+            <input
+              type="text"
+              name="Name"
+              id="Name"
+              required
+              placeholder="ENTER YOUR NAME"
+            />
+          </div>
+          <div class="field space">
+            <span class="fa fa-lock"></span>
+            <input
+              type="number"
+              name="Roll No"
+              id="Roll No"
+              required
+              placeholder="Roll No"
+            />
+          </div>
+          <br />
+          <div class="field">
+            
+              <input type="submit"  value="SUBMIT"  />
+            
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbxUO1en9MOfIAHLt0mqkTLbXWtJQEGGOo0QxxuZSnkZoVyLnjEHp6xZXwf-X1hb0LTQsg/exec";
+      const form = document.forms["Studentdata"];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+        // .then(response =>
+        // onclick="window.location.href = 'successform.html';"
+        // //  alert("Thank you! your form is submitted successfully." )
+        //  )
+				.then(() => { 
+        window.location.href = 'successform.html';
+
+          //  window.location.reload(); 
+          })
+				.catch(error => console.error('Error!', error.message))
+			})
+    </script>
+  </body>
+</html>
