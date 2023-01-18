@@ -3,11 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Attendance</title>
-	  <script>
-	  if (document.referrer.indexOf("https://bikash7015.github.io/attendance-qr-scanner/") === -1) {
-    window.location.replace("https://bikash7015.github.io/attendance-qr-scanner/");
-}
-	  </script>
+
     <link rel="stylesheet" href="style1.css" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
@@ -38,9 +34,9 @@
           </div>
           <br />
           <div class="field">
-            
+
               <input type="submit"  value="SUBMIT"  />
-            
+
           </div>
         </form>
       </div>
@@ -51,36 +47,30 @@
         "https://script.google.com/macros/s/AKfycbxUO1en9MOfIAHLt0mqkTLbXWtJQEGGOo0QxxuZSnkZoVyLnjEHp6xZXwf-X1hb0LTQsg/exec";
       const form = document.forms["Studentdata"];
 
-	
-	    
-	    
-	    
-	    
-	    
-	    
       form.addEventListener("submit", (e) => {
+
+        // Get the form data
+        var formData = new FormData(document.getElementById("Studentdata"));
+
+        // Add the current timestamp to the form data
+        var timestamp = new Date().toISOString();
+        formData.append("timestamp", timestamp);
+
         e.preventDefault();
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-        // .then(response =>
-        // onclick="window.location.href = 'successform.html';"
-        // //  alert("Thank you! your form is submitted successfully." )
-        //  )
-				.then(() => { 
+        //fetch(scriptURL, { method: "POST", body: new FormData(form) })
+        fetch("https://script.google.com/macros/s/AKfycbxUO1en9MOfIAHLt0mqkTLbXWtJQEGGOo0QxxuZSnkZoVyLnjEHp6xZXwf-X1hb0LTQsg/exec", {
+          method: "POST",
+          body: formData
+        })
+
+				.then(() => {
         window.location.href = 'successform.html';
 
-		
-
-		
-		
-		
-		
-		
-		
-		
-          //  window.location.reload(); 
+          //  window.location.reload();
           })
 				.catch(error => console.error('Error!', error.message))
-			}) }
+			})
+
     </script>
   </body>
 </html>
