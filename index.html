@@ -48,21 +48,21 @@
       const form = document.forms["Studentdata"];
 	    
 	    
-	    	      function getIndianTime() {
-    var date = new Date();
-    var options = {
-        timeZone: "Asia/Kolkata",
-        hour12: false,
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit"
-    };
-    var indianTime = date.toLocaleString("en-IN", options);
-    return indianTime;
-}
+// 	    	      function getIndianTime() {
+//     var date = new Date();
+//     var options = {
+//         timeZone: "Asia/Kolkata",
+//         hour12: false,
+//         year: "numeric",
+//         month: "short",
+//         day: "numeric",
+//         hour: "2-digit",
+//         minute: "2-digit",
+//         second: "2-digit"
+//     };
+//     var indianTime = date.toLocaleString("en-IN", options);
+//     return indianTime;
+// }
 
 
       form.addEventListener("submit", (e) => {
@@ -74,14 +74,14 @@
 
 	      
 	      
-	var timestamp = getIndianTime();
-formData.append("timestamp", timestamp);
+// 	var timestamp = getIndianTime();
+// formData.append("timestamp", timestamp);
       
 	      
 
-        // Add the current timestamp to the form data
-//         var timestamp = new Date().toISOString();
-//         formData.append("timestamp", timestamp);
+        Add the current timestamp to the form data
+        var timestamp = new Date().toISOString();
+        formData.append("timestamp", timestamp);
 
         e.preventDefault();
         //fetch(scriptURL, { method: "POST", body: new FormData(form) })
