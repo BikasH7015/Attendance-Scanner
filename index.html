@@ -46,14 +46,9 @@
       const scriptURL =
         "https://script.google.com/macros/s/AKfycbxUO1en9MOfIAHLt0mqkTLbXWtJQEGGOo0QxxuZSnkZoVyLnjEHp6xZXwf-X1hb0LTQsg/exec";
       const form = document.forms["Studentdata"];
-
-      form.addEventListener("submit", (e) => {
-
-        // Get the form data
-//         var formData = new FormData(document.getElementById("Studentdata"));
-	      
-	      
-	      function getIndianTime() {
+	    
+	    
+	    	      function getIndianTime() {
     var date = new Date();
     var options = {
         timeZone: "Asia/Kolkata",
@@ -68,6 +63,14 @@
     var indianTime = date.toLocaleString("en-IN", options);
     return indianTime;
 }
+
+
+      form.addEventListener("submit", (e) => {
+
+        // Get the form data
+//         var formData = new FormData(document.getElementById("Studentdata"));
+	      
+	      
 
 	      
 	      
