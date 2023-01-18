@@ -39,7 +39,7 @@
           <br />
           <div class="field">
             
-              <input type="submit"  value="SUBMIT" onclick=" submitForm()" />
+              <input type="submit"  value="SUBMIT"  />
             
           </div>
         </form>
@@ -69,20 +69,7 @@
         window.location.href = 'successform.html';
 
 		
-		     function submitForm() {
-    // Get the form data
-    var formData = new FormData(document.getElementById("Studentdata"));
 
-    // Add the current timestamp to the form data
-    var timestamp = new Date().toISOString();
-    formData.append("timestamp", timestamp);
-
-    // Send the form data to the Google Sheet
-    fetch("https://script.google.com/macros/s/AKfycbxUO1en9MOfIAHLt0mqkTLbXWtJQEGGOo0QxxuZSnkZoVyLnjEHp6xZXwf-X1hb0LTQsg/exec", {
-      method: "POST",
-      body: formData
-    })
-		
 		
 		
 		
